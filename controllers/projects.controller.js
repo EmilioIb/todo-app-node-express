@@ -1,6 +1,6 @@
 const { projectsService } = require('../services/index.service');
 
-class TodosController {
+class ProjectsController {
   getProjects = async (req, res, next) => {
     try {
       const { code, payload } = await projectsService.getProjects();
@@ -22,7 +22,7 @@ class TodosController {
 
   updateProject = async (req, res, next) => {
     try {
-      const idProject = req.params.idProject;
+      const { idProject } = req.params;
       const name = req.body.name.trim();
       const { code, status, msg } = await projectsService.updateProject(idProject, name);
       return res.status(code).json({ status, msg });
@@ -33,13 +33,13 @@ class TodosController {
 
   deleteProject = async (req, res, next) => {
     try {
-      const idsProjects = req.body.idsProjects;
+      const { idsProjects, safeDelete } = req.body;
 
       const returnObj = { msg: 'Result of process', data: [] };
-      for (const project of idsProjects) {
-        const { status, msg } = await projectsService.deleteProject(project);
+      for (const idProject of idsProjects) {
+        const { status, msg } = await projectsService.deleteProject(idProject, safeDelete);
         returnObj.data.push({
-          idProject: project,
+          idProject,
           status,
           msg,
         });
@@ -52,4 +52,4 @@ class TodosController {
   };
 }
 
-module.exports = new TodosController();
+module.exports = new ProjectsController();

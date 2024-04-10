@@ -1,27 +1,18 @@
 const { projectsRepository } = require('../repositories/index.repository');
+const mapper = require('../utils/mapper');
 
 class ProjectsService {
   getProjects = async () => {
     try {
-      const res = await projectsRepository.getProjects();
-
-      if (res.length <= 0) {
-        return {
-          code: 204,
-          payload: {
-            status: true,
-            msg: 'No data found',
-            data: [],
-          },
-        };
-      }
+      const projectsRaw = await projectsRepository.getProjects();
+      const projectsClean = mapper.mappProjects(projectsRaw);
 
       return {
         code: 200,
         payload: {
           status: true,
-          msg: `Users found: ${res.length}`,
-          res,
+          msg: `Projects found: ${projectsClean.length}`,
+          projectsClean,
         },
       };
     } catch (error) {
@@ -45,9 +36,9 @@ class ProjectsService {
     }
   };
 
-  deleteProject = async idProject => {
+  deleteProject = async (idProject, safeDelete) => {
     try {
-      return await projectsRepository.deleteProject(idProject);
+      return await projectsRepository.deleteProject(idProject, safeDelete);
     } catch (error) {
       throw error;
     }

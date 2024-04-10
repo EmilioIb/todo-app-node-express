@@ -44,17 +44,18 @@ class ProjectsRepository {
     }
   };
 
-  deleteProject = async idProject => {
+  deleteProject = async (idProject, safeDelete) => {
     try {
-      const query = 'select public.projects_del_projects(:idProject)';
+      const query = 'select public.projects_del_project(:idProject, :safeDelete)';
       const res = await queryGenerator.executeQuery(
         query,
         {
           idProject,
+          safeDelete,
         },
         false
       );
-      return res[0].projects_del_projects;
+      return res[0].projects_del_project;
     } catch (error) {
       throw error;
     }

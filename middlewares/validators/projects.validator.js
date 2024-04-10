@@ -1,6 +1,6 @@
 const joi = require('joi');
 
-class TodosValidator {
+class ProjectsValidator {
   insertProject = () => {
     return joi
       .object()
@@ -24,9 +24,10 @@ class TodosValidator {
       .object()
       .keys({
         idsProjects: joi.array().items(joi.number().integer().positive()).min(1).required(),
+        safeDelete: joi.bool().required(),
       })
       .options({ allowUnknown: true, stripUnknown: true });
   };
 }
 
-module.exports = new TodosValidator();
+module.exports = new ProjectsValidator();
