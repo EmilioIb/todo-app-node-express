@@ -1,0 +1,481 @@
+{
+	"info": {
+		"_postman_id": "ef9000f9-36a6-4b0c-a2a7-d4a3ce70a7ba",
+		"name": "todo-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28094211"
+	},
+	"item": [
+		{
+			"name": "todos",
+			"item": [
+				{
+					"name": "Get Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-todo}}/todos?timeOffset=360",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"todos"
+							],
+							"query": [
+								{
+									"key": "timeOffset",
+									"value": "360"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Subir informacion de enero\",\r\n    \"idProject\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/todos",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Todo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Crear crud para seleccion de cuentas myAdmin\",\r\n    \"idProject\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/todos/3",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"todos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete Todo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url-todo}}/todos/status/11",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"todos",
+								"status",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Todos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idsTodos\": [14]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/todos",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "projects",
+			"item": [
+				{
+					"name": "Get Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-todo}}/projects",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Speed look\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/projects",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tracker Fleet T1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/projects/2",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"projects",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Projects",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idsProjects\": [\r\n        5\r\n    ],\r\n    \"safeDelete\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/projects",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "times",
+			"item": [
+				{
+					"name": "Get times todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-todo}}/times/1?timeOffset=360",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"times",
+								"1"
+							],
+							"query": [
+								{
+									"key": "timeOffset",
+									"value": "360"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Working on todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url-todo}}/times/4",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"times",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Time Manual",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromDate\": \"2024-04-20 19:30:13.000\",\r\n    \"toDate\": \"2024-04-20 19:32:00.000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/times/manual/13",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"times",
+								"manual",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Time Manual",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromDate\": \"2024-04-20 13:30:13\",\r\n    \"toDate\": \"2024-04-20 13:38:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/times/manual/13/18",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"times",
+								"manual",
+								"13",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Time Manual",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"idsTimesTodo\": [16,17]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/times/manual",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"times",
+								"manual"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reports",
+			"item": [
+				{
+					"name": "Report Uncompleted",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"st19030093@utlaguna.edu.mx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/reports/uncompletedTodos?timeOffset=360",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"reports",
+								"uncompletedTodos"
+							],
+							"query": [
+								{
+									"key": "timeOffset",
+									"value": "360"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"st19030093@utlaguna.edu.mx\",\r\n    \"fromDate\": \"2024-04-23\",\r\n    \"toDate\": \"2024-04-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/reports/allTodos?timeOffset=360",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"reports",
+								"allTodos"
+							],
+							"query": [
+								{
+									"key": "timeOffset",
+									"value": "360"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report Project",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"st19030093@utlaguna.edu.mx\",\r\n    \"idProject\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-todo}}/reports/projectTodos?timeOffset=360",
+							"host": [
+								"{{url-todo}}"
+							],
+							"path": [
+								"reports",
+								"projectTodos"
+							],
+							"query": [
+								{
+									"key": "timeOffset",
+									"value": "360"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
