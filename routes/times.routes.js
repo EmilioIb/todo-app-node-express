@@ -13,7 +13,7 @@ router.post('/manual/:idTodo', timesMiddleware.insertTimeTodo, timesController.i
 
 router.put('/manual/:idTodo/:idTimesTodo', timesMiddleware.updateTimeTodo, timesController.updateTimeTodoManually);
 
-router.delete('/manual/:idTodo', timesMiddleware.deleteTimeTodo, timesController.deleteTimeTodoManually);
+router.delete('/manual', timesMiddleware.deleteTimeTodo, timesController.deleteTimeTodoManually);
 
 app.use('/times', router);
 

@@ -23,6 +23,16 @@ class TimesUtil {
     }
   };
 
+  transformDateToUtcHour = (date, timeOffset) => {
+    try {
+      let dateToTransform = date ? new Date(date) : new Date();
+      dateToTransform.setMinutes(dateToTransform.getMinutes() + timeOffset);
+      return dateToTransform;
+    } catch (error) {
+      throw error;
+    }
+  };
+
   formatDate = date => {
     try {
       const yearClean = date.getFullYear();

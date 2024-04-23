@@ -58,13 +58,12 @@ class TimesRepository {
     }
   };
 
-  deleteTimeTodoManually = async (idTodo, idTimeTodo) => {
+  deleteTimeTodoManually = async idTimeTodo => {
     try {
-      const query = 'select public.times_todo_del_time(:idTodo, :idTimeTodo)';
+      const query = 'select public.times_todo_del_time( :idTimeTodo)';
       const res = await queryGenerator.executeQuery(
         query,
         {
-          idTodo,
           idTimeTodo,
         },
         false

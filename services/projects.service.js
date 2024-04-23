@@ -44,4 +44,5 @@ class ProjectsService {
     }
   };
 }
+
 module.exports = new ProjectsService();

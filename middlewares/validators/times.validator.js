@@ -47,7 +47,6 @@ class ProjectsValidator {
     return joi
       .object()
       .keys({
-        idTodo: joi.number().integer().positive().required(),
         idsTimesTodo: joi.array().items(joi.number().integer().positive()).min(1).required(),
       })
       .options({ allowUnknown: true, stripUnknown: true });

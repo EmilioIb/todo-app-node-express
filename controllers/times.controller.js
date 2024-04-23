@@ -46,12 +46,11 @@ class TimesController {
 
   deleteTimeTodoManually = async (req, res, next) => {
     try {
-      const { idTodo } = req.params;
       const { idsTimesTodo } = req.body;
 
       const returnObj = { msg: 'Result of process', data: [] };
       for (const idTimesTodo of idsTimesTodo) {
-        const { status, msg } = await timesService.deleteTimeTodoManually(idTodo, idTimesTodo);
+        const { status, msg } = await timesService.deleteTimeTodoManually(idTimesTodo);
         returnObj.data.push({
           idTimesTodo,
           status,

@@ -53,9 +53,9 @@ class TimesService {
     }
   };
 
-  deleteTimeTodoManually = async (idTodo, idTimeTodo) => {
+  deleteTimeTodoManually = async idTimeTodo => {
     try {
-      return await timesRepository.deleteTimeTodoManually(idTodo, idTimeTodo);
+      return await timesRepository.deleteTimeTodoManually(idTimeTodo);
     } catch (error) {
       throw error;
     }
@@ -72,4 +72,5 @@ class TimesService {
     }
   };
 }
+
 module.exports = new TimesService();

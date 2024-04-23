@@ -5,7 +5,7 @@ class ProjectsValidator {
     return joi
       .object()
       .keys({
-        name: joi.string().required(),
+        name: joi.string().max(100).required(),
       })
       .options({ allowUnknown: true, stripUnknown: true });
   };

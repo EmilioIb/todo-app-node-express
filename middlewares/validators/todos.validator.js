@@ -14,7 +14,7 @@ class TodosValidator {
     return joi
       .object()
       .keys({
-        name: joi.string().required(),
+        name: joi.string().max(100).required(),
         idProject: joi.number().integer().positive().required(),
       })
       .options({ allowUnknown: true, stripUnknown: true });
@@ -24,7 +24,7 @@ class TodosValidator {
     return joi
       .object()
       .keys({
-        name: joi.string().required(),
+        name: joi.string().max(100).required(),
         idProject: joi.number().integer().positive().required(),
         idTodo: joi.number().integer().positive().required(),
       })

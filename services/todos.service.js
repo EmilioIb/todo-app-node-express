@@ -5,14 +5,14 @@ class TodosService {
   getTodos = async timeOffset => {
     try {
       const todosRaw = await todosRepository.getTodos();
-      let todosClean = mapper.mappTodos(todosRaw, timeOffset);
+      const todosClean = mapper.mappTodos(todosRaw, timeOffset);
 
       return {
         code: 200,
         payload: {
           status: true,
           msg: `Todos found: ${todosRaw.length}`,
-          todosClean,
+          data: todosClean,
         },
       };
     } catch (error) {
@@ -52,4 +52,5 @@ class TodosService {
     }
   };
 }
+
 module.exports = new TodosService();
